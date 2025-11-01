@@ -26,3 +26,12 @@ app.use("/api/users", userRoutes);
 
 // IMPORTANT: export the app — do NOT call app.listen()
 module.exports = app;
+// Error handler for unhandled rejections and uncaught exceptions
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection:", reason);
+});
+
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught Exception:", err);
+});
+
